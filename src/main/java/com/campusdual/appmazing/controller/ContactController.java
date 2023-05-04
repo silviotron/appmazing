@@ -28,7 +28,6 @@ public class ContactController {
     public String testControllerMethod(){
         return "Contacts controller method works!";
     }
-
     @PostMapping(value = "/get")
     public ContactDto queryContact(@RequestBody ContactDto contactDto){
         return contactService.queryContact(contactDto);
@@ -44,6 +43,10 @@ public class ContactController {
     @PutMapping(value = "/update")
     public int updateContact(@RequestBody ContactDto contactDto){
         return contactService.updateContact(contactDto);
+    }
+    @PutMapping(value = "/secureUpdate")
+    public int secureUpdateContact(@RequestBody ContactDto contactDto){
+        return contactService.secureUpdateContact(contactDto);
     }
     @DeleteMapping(value = "/delete")
     public int deleteContact(@RequestBody ContactDto contactDto){

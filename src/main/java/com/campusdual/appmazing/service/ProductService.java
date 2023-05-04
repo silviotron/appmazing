@@ -4,6 +4,7 @@ import com.campusdual.appmazing.api.IProductService;
 import com.campusdual.appmazing.model.Product;
 import com.campusdual.appmazing.model.dao.ProductDao;
 import com.campusdual.appmazing.model.dto.ProductDto;
+import com.campusdual.appmazing.model.dto.ProductDto;
 import com.campusdual.appmazing.model.dto.dtomapper.ProductMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;

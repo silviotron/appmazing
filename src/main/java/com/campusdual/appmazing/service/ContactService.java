@@ -42,6 +42,28 @@ public class ContactService implements IContactService {
     public int updateContact(ContactDto contactDto) {
         return insertContact(contactDto);
     }
+    @Override
+    public int secureUpdateContact(ContactDto contactDto) {
+        ContactDto c = queryContact(contactDto);
+        if (c != null) {
+            if (contactDto.getName() == null) {
+                contactDto.setName(c.getName());
+            }
+            if (contactDto.getSurname() == null) {
+                contactDto.setSurname(c.getSurname());
+            }
+            if (contactDto.getSurname2() == null) {
+                contactDto.setSurname2(c.getSurname2());
+            }
+            if (contactDto.getTelephone() == null) {
+                contactDto.setTelephone(c.getTelephone());
+            }
+            if (contactDto.getEmail() == null) {
+                contactDto.setEmail(c.getEmail());
+            }
+        }
+        return insertContact(contactDto);
+    }
 
     @Override
     public int deleteContact(ContactDto contactDto) {
